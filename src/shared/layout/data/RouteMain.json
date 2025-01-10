@@ -1,0 +1,72 @@
+[
+  {
+    "route": "/admin/dashboad",
+    "topic": "/admin/dashboad",
+    "icon": "fa-solid fa-house",
+    "name": "Dashboard",
+    "child": []
+  },
+  {
+    "route": "/admin/hospital",
+    "topic": "/admin/hospital",
+    "icon": "fa-solid fa-hospital",
+    "name": "Hospital",
+    "child": []
+  },
+  {
+    "route": "/admin/department",
+    "topic": "/admin/department",
+    "icon": "fa-solid fa-business-time",
+    "name": "Department",
+    "child": []
+  },
+  {
+    "route": "/admin/package",
+    "topic": "/admin/package",
+    "icon": "fa-solid fa-hand-holding-medical",
+    "name": "Package",
+    "child": []
+  },
+  {
+    "route": "/admin/testing",
+    "topic": "/admin/testing",
+    "icon": "fa-solid fa-vial",
+    "name": "Testing",
+    "child": []
+  },
+  {
+    "route": "/admin/vaccine",
+    "topic": "/admin/vaccine",
+    "icon": "fa-solid fa-syringe",
+    "name": "Vaccine",
+    "child": []
+  },
+  {
+    "route": "/admin/booking/list/all",
+    "topic": "/admin/booking",
+    "icon": "fa-solid fa-calendar-days",
+    "name": "Booking",
+    "child": []
+  },
+  {
+    "route": "/admin/dayoff",
+    "topic": "/admin/dayoff",
+    "icon": "fa-solid fa-power-off",
+    "name": "Day Off",
+    "child": []
+  },
+  {
+    "route": "/admin/event",
+    "topic": "/admin/event",
+    "icon": "fa-solid fa-shield-virus",
+    "name": "Event",
+    "child": []
+  },
+  {
+    "route": "/admin/analysis",
+    "topic": "/admin/analysis",
+    "icon": "fa-solid fa-chart-line",
+    "name": "Analysis Report",
+    "child": []
+  }
+]

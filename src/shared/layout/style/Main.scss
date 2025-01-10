@@ -1,0 +1,536 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+* {
+  box-sizing: border-box;
+  padding: 0;
+  scrollbar-width: none;
+  margin: 0;
+  font-size: 1rem;
+  font-display: swap;
+  font-family: "Nunito Sans", sans-serif;
+  font-variation-settings:
+    "wdth" 100,
+    "YTLC" 500;
+  scroll-behavior: smooth;
+  font-weight: 500;
+  //render font chữ
+  text-rendering: optimizeLegibility;
+  // -webkit-user-select: none; /* Safari */
+  // -moz-user-select: none; /* Firefox */
+  // -ms-user-select: none; /* Internet Explorer/Edge */
+  // user-select: none; /* Standard syntax */
+}
+
+:root {
+  --cl_1: rgb(232, 242, 247);
+  --cl_3: rgb(105, 153, 168);
+  --cl_2: rgb(0, 53, 83);
+  --active: #2684ff;
+  --cl_4: orange;
+  --white: white;
+  --black: black;
+  --gray: rgba(106, 106, 106, 0.728);
+  --fz_label: 1.1rem;
+  --fz_medium: 1.3rem;
+  --fz_large: 1.6rem;
+  --fz_max: 2rem;
+  --fz_small: 0.9rem;
+  --fz_smallmax: 0.8rem;
+  --mw: 1080px;
+  --fz_title: 2.7rem;
+  --shadow-black: rgba(65, 65, 65, 0.305);
+  --shadow-white: rgba(255, 255, 255, 0.402);
+}
+
+body {
+  width: 100%;
+  color: var(--cl_2);
+  scrollbar-width: none;
+  background-color: var(--white);
+}
+
+button {
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+button:hover {
+  transform: scale(1.05);
+}
+button:active {
+  transform: scale(0.98);
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+.link_tag {
+  text-decoration: none;
+  color: var(--cl_2);
+  font-size: 1rem;
+  width: fit-content;
+
+  .view_ {
+    font-size: var(--fz_smallmax);
+    padding: 0.2rem 1rem;
+    background-color: var(--cl_1);
+    box-shadow: top;
+    margin: auto;
+    width: fit-content;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    color: var(--cl_2);
+    box-shadow:
+      -1px -1px 2px var(--shadow-white),
+      1px 1px 2px var(--gray);
+  }
+}
+
+/*-----------------------------------------------*/
+/* Cho các trình duyệt WebKit (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 0.4rem;
+  /* Chiều rộng của thanh cuộn */
+}
+
+::-webkit-scrollbar-track {
+  background: var(--cl_2);
+  /* Màu nền của phần track */
+}
+
+::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(to bottom, var(--cl_2), var(--cl_1));
+  /* Màu của thanh cuộn */
+  //border-radius: 6px;
+  // border: 0.01rem solid black;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-image: linear-gradient(to bottom, var(--cl_2), white);
+  /* Màu của thanh cuộn */
+}
+
+/* Cho Firefox */
+/* Note: `scrollbar-width` chỉ hỗ trợ từ Firefox 64 trở lên */
+body {
+  scrollbar-width: thin;
+  /* thin, auto, or none */
+  scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar {
+  width: 0.5rem;
+  display: none;
+}
+
+body::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 6px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+.pagination {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  padding-top: 1rem;
+  gap: 0.3rem;
+  button {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.2rem;
+    outline: none;
+    font-size: var(--fz_small);
+    outline: none;
+    border: none;
+    font-weight: 700;
+    background-color: var(--white);
+    color: var(--cl_2);
+    box-shadow: 0.1rem 0.1rem 0.2rem var(--shadow-black);
+    cursor: pointer;
+    transition: 0.3s ease all;
+  }
+  button:first-child {
+    width: 3rem;
+    height: 2rem;
+    background-color: var(--cl_3);
+    color: var(--white);
+  }
+  button:last-child {
+    width: 3rem;
+    height: 2rem;
+    background-color: var(--cl_3);
+    color: var(--white);
+  }
+  button:active {
+    background-color: var(--cl_2);
+    color: var(--white);
+  }
+  .button_pagination_active {
+    background-color: var(--cl_2);
+    color: var(--white);
+  }
+  button:disabled {
+    background-color: var(--cl_1);
+    color: var(--shadow-black);
+  }
+}
+
+//filter option
+.box_filter_option_conponent {
+  height: 100%;
+  position: relative;
+
+  .filter_option {
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    height: 2.5rem;
+    cursor: pointer;
+    background-color: var(--white);
+    border-radius: 0.3rem;
+    border: 1px solid var(--shadow-black);
+    box-shadow: 0 0 2px var(--shadow-black);
+  }
+
+  .list_option {
+    position: absolute;
+    transform-origin: top;
+    right: 0;
+    background-color: var(--active);
+    margin-top: 0.5rem; /* Space between filter and options */
+    animation: slideDown ease-in 0.3s;
+    .triangle {
+      width: 0;
+      height: 0;
+      border-left: 8px solid transparent; /* Creates the left side of the triangle */
+      border-right: 8px solid transparent; /* Creates the right side of the triangle */
+      border-bottom: 8px solid var(--active); /* Creates the bottom part (color matches dropdown background) */
+      position: absolute;
+      top: -8px; /* Adjusts the triangle position to attach it to the filter */
+      right: 20px; /* Adjust this value to align the triangle under the filter icon */
+    }
+
+    .container_list_option {
+      padding: 1rem 2rem;
+      background-color: var(--active);
+
+      box-shadow: 0 0 2px var(--shadow-black);
+      .item {
+        span {
+          color: var(--white);
+          font-weight: 800;
+          font-size: var(--fz_smallmax);
+        }
+      }
+    }
+  }
+  @keyframes slideDown {
+    0% {
+      max-height: 0;
+
+      opacity: 0;
+    }
+    100% {
+      max-height: fit-content;
+      opacity: 1;
+    }
+  }
+}
+
+.dark {
+  // --shadow-white: rgba(65, 65, 65, 0.305);
+  // --shadow-black: rgba(255, 255, 255, 0.402);
+  // --white: black; /* Đổi màu trắng thành đen */
+  // --black: white; /* Đổi màu đen thành trắng */
+  // --gray: rgba(255, 255, 255, 0.728);
+  // --cl_2: rgb(232, 242, 247);
+  // --cl_1: rgb(0, 53, 83); /* Thay đổi màu gray cho dark mode */
+  background-color: var(--cl_1);
+  .dashboard_P {
+    --cl_1: rgb(0, 53, 83);
+    --cl_2: white;
+  }
+  .sidebar_P {
+    --cl_3: rgb(0, 53, 83);
+    --cl_2: white;
+    .list_router {
+      border-radius: 0;
+    }
+  }
+  .navbar_P {
+    background-color: rgb(0, 53, 83);
+    color: white;
+    .link_tag {
+      color: white;
+    }
+    .left {
+      .logo_company {
+        .link_tag {
+          img {
+            width: 60%;
+            mix-blend-mode: exclusion;
+            filter: grayscale(100%) contrast(2) invert(100%);
+          }
+        }
+      }
+    }
+  }
+  .createHospital_P {
+    .box_form {
+      form {
+        background-color: white;
+      }
+    }
+  }
+  .bookingdetail_Page {
+    .details {
+      background-color: var(--cl_1);
+      .left,
+      .right {
+        background-color: var(--cl_2);
+        color: white;
+      }
+    }
+  }
+  .chatPage {
+    --cl_1: rgb(0, 53, 83);
+    --cl_2: rgb(232, 242, 247);
+    --white: rgb(0, 53, 83);
+    ::-webkit-scrollbar-track {
+      background: var(--cl_1);
+      /* Màu nền của phần track */
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-image: linear-gradient(to bottom, var(--cl_1), var(--cl_2));
+      /* Màu của thanh cuộn */
+      //border-radius: 6px;
+      // border: 0.01rem solid black;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background-image: linear-gradient(to bottom, var(--cl_1), var(--cl_2));
+      /* Màu của thanh cuộn */
+    }
+  }
+}
+
+.btn_submit {
+  background-color: green;
+  color: white;
+  border: none;
+  outline: none;
+  box-shadow: 0 0 0.3rem var(--shadow-black);
+  border-radius: 0.3rem;
+}
+.btn_reset {
+  background-color: orange;
+  color: white;
+  border: none;
+  outline: none;
+  box-shadow: 0 0 0.3rem var(--shadow-black);
+  border-radius: 0.3rem;
+}
+.brums_nav {
+  display: flex;
+  align-content: center;
+
+  gap: 0.5rem;
+  span {
+    font-weight: 800;
+    text-transform: capitalize;
+    cursor: pointer;
+    display: flex;
+    gap: 0.4rem;
+  }
+  i {
+    font-size: var(--fz_smallmax);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.title_page_main {
+  font-weight: 800;
+  padding: 0 0.5rem;
+  text-transform: capitalize;
+}
+
+table {
+  tbody {
+    .active {
+      padding: 0.2rem;
+      font-size: var(--fz_smallmax);
+      background-color: green;
+      min-width: 100px;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      color: white;
+      text-transform: capitalize;
+    }
+    .deactive {
+      padding: 0.2rem;
+      font-size: var(--fz_smallmax);
+      background-color: orange;
+      min-width: 100px;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      color: white;
+      text-transform: capitalize;
+    }
+    .list_action {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+      align-items: center;
+      i {
+        cursor: pointer;
+        width: 2rem;
+        height: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--white);
+        font-size: 0.8rem;
+        background-color: var(--cl_3);
+        border-radius: 0.2rem;
+        box-shadow:
+          1px 1px 1px var(--cl_2),
+          -1px -1px 1px var(--cl_1);
+        transition: 0.3s;
+      }
+      i:hover {
+        transform: scale(0.98);
+        background-color: var(--cl_2);
+      }
+    }
+  }
+}
+
+.mocup_edit_box {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.385);
+  .container {
+    max-height: 100%;
+    background-color: white;
+
+    overflow-y: scroll;
+    // scrollbar-width: thin;
+    border-radius: 1rem;
+    padding: 2rem 3rem;
+    width: 100%;
+    max-width: 600px;
+    position: relative;
+    .close {
+      position: absolute;
+      right: 0.5rem;
+      top: 0.5rem;
+      width: 1.5rem;
+      height: 1.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      cursor: pointer;
+      background-color: var(--cl_4);
+      transition: 0.3s ease-in-out;
+    }
+    .close:hover {
+      transform: scale(0.97);
+    }
+    .title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      text-align: center;
+      padding-bottom: 1rem;
+    }
+    .row_2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .row_3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1rem;
+    }
+    .row_73 {
+      display: grid;
+      grid-template-columns: 7fr 3fr;
+      gap: 1rem;
+    }
+    .b_img_ {
+      width: 100%;
+      // display: flex;
+
+      // align-items: start;
+      img {
+        width: 50%;
+      }
+    }
+
+    .box_btn {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      button {
+        padding: 0.5rem 4rem;
+        color: white;
+        background-color: var(--cl_4);
+        outline: none;
+        border: none;
+        border-radius: 0.5rem;
+        box-shadow:
+          1px 1px 1px rgb(159, 104, 1),
+          -1px -1px 1px rgb(255, 206, 116);
+      }
+    }
+  }
+}
+.add_new_button__ {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--cl_2);
+
+  border-radius: 0.3rem;
+  height: 2.5rem;
+  width: 2.5rem;
+  color: white;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid var(--shadow-black);
+  box-shadow: 0 0 2px var(--shadow-black);
+  transition: 0.3s ease-in-out;
+  &:hover {
+    transform: scale(0.97);
+  }
+}

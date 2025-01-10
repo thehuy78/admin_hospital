@@ -1,0 +1,281 @@
+.account_Page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  background-color: white;
+  min-height: calc(100vh - 1rem);
+
+  .navigator_acc {
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--cl_1);
+    width: 100%;
+
+    p {
+      cursor: pointer;
+      padding: 1rem 2rem;
+      position: relative;
+      width: 50%;
+      font-weight: bold;
+      color: #333;
+      text-align: center;
+      background-color: var(--cl_1);
+
+      &:hover {
+        color: #007bff;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: var(--cl_2);
+        transition: width 0.3s ease-in-out;
+      }
+
+      &.active {
+        color: var(--cl_2);
+        // background-color: var(--cl_3);
+
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .content_navigator {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+
+    .content_component {
+      flex: 1 0 100%;
+      display: flex;
+      padding: 1rem;
+
+      animation-duration: 0.4s;
+      animation-fill-mode: forwards;
+
+      form {
+        width: 100%;
+        padding: 1rem;
+        max-width: 800px;
+        margin: auto;
+        .row_6_4 {
+          display: grid;
+          grid-template-columns: 6fr 4fr;
+
+          gap: 0.5rem;
+        }
+        .box_btn {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          padding-top: 1rem;
+          button {
+            padding: 0.5rem 4rem;
+            background-color: var(--cl_3);
+            outline: none;
+            border: none;
+            border-radius: 0.5rem;
+            color: white;
+            box-shadow:
+              1px 1px 1px var(--cl_2),
+              -1px -1px 1px var(--cl_1);
+          }
+        }
+        .title_form {
+          width: 100%;
+          display: flex;
+          padding-bottom: 1rem;
+          justify-content: center;
+          font-weight: 800;
+          font-size: var(--fz_large);
+          text-transform: capitalize;
+          position: relative;
+
+          color: rgb(0, 53, 83); /* Màu chữ mặc định */
+          background-clip: text;
+          overflow: hidden;
+
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -150%; /* Bắt đầu từ ngoài vùng chữ */
+            width: 200%; /* Bao phủ hết chiều dài */
+            height: 100%;
+            background: linear-gradient(
+              120deg,
+              rgba(255, 255, 255, 0) 30%,
+              rgba(255, 255, 255, 0.8) 20%,
+              rgba(255, 255, 255, 0) 100%
+            );
+            transform: skewX(-25deg); /* Nghiêng vệt sáng */
+            animation: shine 3s infinite; /* Hiệu ứng lặp */
+          }
+
+          @keyframes shine {
+            from {
+              left: -150%; /* Bắt đầu bên trái */
+            }
+            to {
+              left: 150%; /* Di chuyển sang phải */
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @keyframes slideInFromLeft {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInFromRight {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+}
+.updateAccountPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+  .box_form {
+    background-color: white;
+    border-radius: 0.5rem;
+
+    .title_form {
+      width: 100%;
+      display: flex;
+      padding-bottom: 1rem;
+      justify-content: center;
+      font-weight: 800;
+      font-size: var(--fz_large);
+      text-transform: capitalize;
+      position: relative;
+
+      color: rgb(0, 53, 83); /* Màu chữ mặc định */
+      background-clip: text;
+      overflow: hidden;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -150%; /* Bắt đầu từ ngoài vùng chữ */
+        width: 200%; /* Bao phủ hết chiều dài */
+        height: 100%;
+        background: linear-gradient(
+          120deg,
+          rgba(255, 255, 255, 0) 30%,
+          rgba(255, 255, 255, 0.8) 20%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        transform: skewX(-25deg); /* Nghiêng vệt sáng */
+        animation: shine 3s infinite; /* Hiệu ứng lặp */
+      }
+
+      @keyframes shine {
+        from {
+          left: -150%; /* Bắt đầu bên trái */
+        }
+        to {
+          left: 150%; /* Di chuyển sang phải */
+        }
+      }
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      .form_Group {
+        display: flex;
+        flex-direction: column;
+        label {
+          font-size: var(--fz_small);
+          text-transform: capitalize;
+          font-weight: 700;
+          padding: 0.2rem 0;
+          color: var(--gray);
+          span {
+            color: red;
+            font-size: var(--fz_smallmax);
+          }
+        }
+        div {
+          position: relative;
+          input {
+            width: 100%;
+            line-height: 1.2rem;
+            padding: 0.7rem 0.5rem;
+            border: none;
+            outline: none;
+            min-width: 550px;
+            min-height: 3rem;
+            border-radius: 0.3rem;
+            border: 0.05rem solid var(--shadow-black);
+            box-shadow: 0 0 2px var(--shadow-black);
+
+            &:focus {
+              border: 1px solid var(--active);
+            }
+          }
+          i {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            cursor: pointer;
+            transform: translate(-50%, -50%);
+          }
+        }
+      }
+      .b_button {
+        padding-top: 1rem;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        button {
+          padding: 0.5rem 4rem;
+          outline: none;
+          border: none;
+          border-radius: 0.3rem;
+          box-shadow: 0 0 0.2rem var(--shadow-black);
+          color: white;
+          font-weight: 750;
+        }
+        button[type="submit"] {
+          background-color: green;
+        }
+        button[type="reset"] {
+          background-color: orange;
+        }
+      }
+    }
+  }
+}

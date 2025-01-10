@@ -1,0 +1,311 @@
+.sidebar_P {
+  width: 100%;
+  background-color: transparent;
+  background-color: var(--cl_3);
+  height: 100vh;
+  .logo_company {
+    color: var(--white);
+    height: 140px;
+
+    .box_img {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      img {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        margin: auto;
+      }
+    }
+    .box_info_account {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      p:first-child {
+        font-weight: 800;
+        text-transform: capitalize;
+      }
+      p:last-child {
+        font-size: var(--fz_smallmax);
+      }
+    }
+    .box_acction {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      padding-top: 0.5rem;
+
+      i {
+        cursor: pointer;
+      }
+    }
+  }
+  .theme_box_ {
+    height: 30px;
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    p {
+      color: var(--white);
+      font-size: 0.8rem;
+      font-weight: 800;
+    }
+    .theme_button {
+      transform: scale(0.7);
+    }
+  }
+
+  .list_router {
+    // height: 100%;
+
+    width: 100%;
+    // background-color: var(--cl_3);
+    overflow-y: scroll;
+    padding: 2rem 1rem 1rem;
+
+    transition: 0.3s ease-in;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    scrollbar-width: none;
+    .item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+      padding-right: 0.5rem;
+      .pattent {
+        display: flex;
+        gap: 1rem;
+        transition: 0.3s ease-in-out;
+        padding: 0.7rem 1rem;
+        align-items: center;
+        border-radius: 0.5rem;
+        justify-content: space-between;
+
+        .left {
+          display: flex;
+          gap: 0.5rem;
+          width: 90%;
+          text-decoration: none;
+          align-items: center;
+          color: var(--white);
+          i {
+            width: 2rem;
+            text-align: center;
+            // font-size: var(--fz_medium);
+          }
+          .link_tag {
+            color: var(--white);
+            span {
+              font-weight: 700;
+              font-size: var(--fz_small);
+            }
+          }
+        }
+        i {
+          width: 10%;
+          transition: 0.3s ease-in-out;
+        }
+        .rotate {
+          transform: rotateX(180deg);
+        }
+      }
+      .pattent_choice {
+        background-color: var(--shadow-white);
+      }
+      @keyframes slideDown {
+        0% {
+          transform: scaleY(0);
+          opacity: 0;
+        }
+        100% {
+          transform: scaleY(1);
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideUp {
+        0% {
+          transform: scaleY(1);
+          opacity: 1;
+          max-height: 10000px;
+        }
+        100% {
+          transform: scaleY(0);
+          opacity: 0;
+          max-height: 0;
+        }
+      }
+
+      .list_show {
+        animation: slideDown 0.3s ease-out forwards;
+        transform-origin: top; /* Đảm bảo rằng phần tử mở từ trên xuống */
+        overflow: hidden;
+
+        transition: 0.3s;
+        .link_tag {
+          width: 100%;
+          color: var(--white);
+          display: flex;
+          transition: 0.3s ease-in-out;
+
+          gap: 1rem;
+          padding: 0.5rem 4rem;
+          align-items: center;
+          span {
+            font-weight: 600;
+            font-size: var(--fz_small);
+          }
+        }
+        .child_choice {
+          background-color: var(--shadow-white);
+        }
+      }
+
+      .list_hide {
+        animation: slideUp 0s ease-out forwards;
+        transform-origin: top; /* Đảm bảo rằng phần tử đóng từ trên xuống */
+        overflow: hidden;
+        transition: 0.3s;
+        .link_tag {
+          color: var(--white);
+          display: flex;
+          gap: 1rem;
+          padding: 0.5rem 5rem;
+          align-items: center;
+          span {
+            font-weight: 600;
+            font-size: var(--fz_small);
+          }
+        }
+      }
+    }
+  }
+
+  // .list_router:hover {
+  //   scrollbar-width: initial;
+  // }
+  // ::-webkit-scrollbar-track {
+  //   background: transparent;
+  // }
+  // ::-webkit-scrollbar-thumb {
+  //   background-image: none;
+  // }
+  // .list_router:hover::-webkit-scrollbar {
+  //   scrollbar-width: initial;
+  // }
+
+  // .list_router:hover::-webkit-scrollbar-track {
+  //   background: var(--cl_2);
+  // }
+  // .list_router:hover::-webkit-scrollbar-thumb {
+  //   background-image: linear-gradient(to bottom, var(--cl_2), var(--cl_1));
+  // }
+}
+.navbar_P {
+  padding: 0.5rem 1rem;
+  display: grid;
+  background-color: white;
+  height: fit-content;
+  color: var(--cl_2);
+  grid-template-columns: 2fr 9fr;
+  // background-color: var(--white);
+  justify-content: space-between;
+  //box-shadow: 0 0.1rem 0.2rem var(--shadow-black);
+  .left {
+    width: 100%;
+
+    overflow: hidden;
+    display: flex;
+    .logo_company {
+      width: calc(20vw - 1rem);
+      display: flex;
+      justify-content: center;
+
+      overflow: hidden;
+      .link_tag {
+        width: 100%;
+        display: flex;
+        justify-content: left;
+
+        img {
+          width: 60%;
+          mix-blend-mode: multiply;
+        }
+      }
+    }
+  }
+  .right {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    .bb_left {
+      width: 40%;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      img {
+        width: 40px;
+        border-radius: 50%;
+      }
+      p {
+        font-weight: 800;
+      }
+    }
+    .bb_right {
+      width: 60%;
+      display: flex;
+      justify-content: end;
+      align-items: center;
+
+      .box_icon {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+        i {
+          font-size: 22px;
+          padding: 0 0.5rem;
+        }
+      }
+      .account_login {
+        .acount_login_container {
+          width: 100%;
+          display: flex;
+          gap: 0.5rem;
+          justify-content: end;
+          align-items: center;
+          position: relative;
+          img {
+            width: 30px;
+            aspect-ratio: 1/1;
+            height: auto;
+            border-radius: 50%;
+            background-color: var(--white);
+          }
+          .b_name {
+            display: flex;
+            // align-items: center;
+            gap: 1rem;
+            cursor: pointer;
+            p {
+              font-size: var(--fz_small);
+              font-weight: 800;
+            }
+
+            i {
+              font-size: 20px;
+              padding: 0 0.5rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

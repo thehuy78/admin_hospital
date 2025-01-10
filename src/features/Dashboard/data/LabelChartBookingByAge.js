@@ -1,0 +1,1 @@
+export const labelDataAge = ["  < 18", "  18 - 50", "  > 50"]

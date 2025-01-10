@@ -1,0 +1,271 @@
+.dashboard_P {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  .row_1_ {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 0.5rem;
+    .left,
+    .right {
+      width: 100%;
+      overflow: hidden;
+      border-radius: 0.5rem;
+      background-color: var(--cl_1);
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      .item {
+        width: 100%;
+        color: var(--cl_2);
+        padding: 1rem;
+        height: 100%;
+
+        overflow: hidden;
+        background-color: var(--cl_1);
+        border-radius: 0.5rem;
+
+        select {
+          background-color: var(--cl_1);
+        }
+      }
+    }
+    .left {
+      .item {
+        width: 100%;
+        padding: 1rem;
+        height: auto;
+        overflow: hidden;
+        background-color: var(--cl_1);
+        border-radius: 0.5rem;
+        color: var(--cl_2);
+        position: relative;
+        min-height: 120px;
+        overflow: hidden;
+        .css_line {
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          width: 80%;
+
+          height: 100%;
+          transform: translate(10%, -70%);
+          // overflow: hidden;
+        }
+        .css_line_1 {
+          position: absolute;
+          right: 0;
+
+          bottom: 0;
+          width: 80%;
+          height: 100%;
+          transform: translate(10%, -40%);
+        }
+        .number {
+          padding: 0.5rem 0;
+          font-size: var(--fz_medium);
+          font-weight: 800;
+        }
+        .down {
+          color: red;
+        }
+        .up {
+          color: green;
+        }
+        .title {
+          display: flex;
+          justify-content: space-between;
+          span:first-child {
+            text-transform: capitalize;
+          }
+          span:last-child {
+            color: orange;
+            font-size: var(--fz_smallmax);
+          }
+        }
+        .b_info {
+          display: flex;
+          justify-content: space-between;
+          padding: 0 0 0.5rem 0;
+          color: var(--cl_2);
+        }
+      }
+    }
+    .right {
+      .item {
+        .namehospital {
+          text-align: center;
+          font-weight: 800;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+
+  .row_2_ {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 0.5rem;
+    .left,
+    .right {
+      width: 100%;
+      overflow: hidden;
+      background-color: var(--cl_1);
+      display: flex;
+      flex-direction: column;
+      border-radius: 0.5rem;
+      gap: 0.5rem;
+
+      .item {
+        width: 100%;
+        color: var(--cl_2);
+        padding: 1rem;
+        overflow: hidden;
+        background-color: var(--cl_1);
+
+        select {
+          background-color: var(--cl_1);
+        }
+      }
+    }
+    .left {
+      .item {
+        width: 100%;
+        height: 350px;
+        color: var(--cl_2);
+        .b_info {
+          display: flex;
+          justify-content: space-between;
+        }
+      }
+    }
+    .right {
+      width: 100%;
+      height: 350px;
+      color: var(--cl_2);
+      .item {
+        .b_info {
+          height: 30px;
+          display: flex;
+          justify-content: space-between;
+          padding-bottom: 0.5rem;
+        }
+        .list_doctor_top {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+          height: 290px;
+          overflow: hidden;
+
+          overflow-y: scroll;
+          .item_doctor {
+            display: grid;
+            padding: 0.5rem;
+            align-items: center;
+            color: var(--cl_1);
+            background-color: var(--cl_3);
+            gap: 0.5rem;
+            border-radius: 0.5rem;
+            grid-template-columns: 0.2fr 0.5fr 2fr 1fr;
+            .box_avatar {
+              width: 100%;
+              display: flex;
+              align-items: center;
+              img {
+                width: 100%;
+                border-radius: 50%;
+              }
+            }
+            .count_chedule {
+              width: 100%;
+
+              display: flex;
+              justify-content: end;
+              align-items: center;
+              text-align: right;
+              font-size: var(--fz_smallmax);
+            }
+            .box_name_code {
+              height: 100%;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              p:last-child {
+                font-size: 0.6rem;
+                font-weight: 800;
+              }
+              p:first-child {
+                font-weight: 800;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .row_3_ {
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--cl_1);
+    display: flex;
+    min-height: 15rem;
+    padding: 1rem 1rem;
+    flex-direction: column;
+    border-radius: 0.5rem;
+    gap: 0.5rem;
+    color: var(--cl_2);
+
+    .box_booking_list {
+      width: 100%;
+      .header_tb {
+        background-color: var(--cl_3);
+        display: grid;
+        gap: 0.1rem;
+        grid-template-columns: 0.5fr 1fr 2fr 1fr 1.5fr 2fr 1.1fr 1.5fr;
+        p {
+          width: 100%;
+          text-align: center;
+          text-transform: capitalize;
+          padding: 0.4rem 0.3rem;
+          font-size: var(--fz_small);
+
+          font-weight: 700;
+        }
+      }
+      .body_tb {
+        max-height: 15rem;
+        overflow-y: scroll;
+        .item {
+          display: grid;
+          gap: 0.1rem;
+          grid-template-columns: 0.5fr 1fr 2fr 1fr 1.5fr 2fr 1.1fr 1.5fr;
+          p {
+            height: 60px;
+            padding: 0 0.5rem;
+
+            width: 100%;
+            font-size: var(--fz_smallmax);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            white-space: wrap;
+          }
+          .box_img {
+            width: 50px;
+            aspect-ratio: 1/1;
+            display: flex;
+            margin: auto;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            background-color: white;
+            img {
+              width: 30px;
+              aspect-ratio: 1/1;
+            }
+          }
+        }
+      }
+    }
+  }
+}
