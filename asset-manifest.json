@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/admin_hospital/static/css/main.62b59888.css",
+    "main.js": "/admin_hospital/static/js/main.cd1161e2.js",
+    "static/js/453.97e1ae68.chunk.js": "/admin_hospital/static/js/453.97e1ae68.chunk.js",
+    "static/media/auth.png": "/admin_hospital/static/media/auth.4eaaaec7861cbc70cd9e.png",
+    "static/media/vietnam.geojson": "/admin_hospital/static/media/vietnam.7079ab08ef89b8845b8c.geojson",
+    "static/media/logo-05.png": "/admin_hospital/static/media/logo-05.32f2d93c4050c8089cc6.png",
+    "static/media/notification.svg?s3g3t9": "/admin_hospital/static/media/notification.5d0158671dd860c714c4.svg",
+    "static/media/notification.eot": "/admin_hospital/static/media/notification.3657084dc0419605a91c.eot",
+    "static/media/notification.woff?s3g3t9": "/admin_hospital/static/media/notification.c392cd33d9d9de730f9d.woff",
+    "static/media/notification.ttf?s3g3t9": "/admin_hospital/static/media/notification.c5d9251ea82e42f75381.ttf",
+    "index.html": "/admin_hospital/index.html",
+    "main.62b59888.css.map": "/admin_hospital/static/css/main.62b59888.css.map",
+    "main.cd1161e2.js.map": "/admin_hospital/static/js/main.cd1161e2.js.map",
+    "453.97e1ae68.chunk.js.map": "/admin_hospital/static/js/453.97e1ae68.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.62b59888.css",
+    "static/js/main.cd1161e2.js"
+  ]
+}
