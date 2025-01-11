@@ -22,28 +22,29 @@ export default function SideBar() {
 
   const [cookie,] = useCookies(["token_hospital"]);
 
-  const [notification, setNotification] = useState('');
-  useEffect(() => {
-    const userId = 'Status'; // ID của người dùng mà bạn muốn theo dõi thông báo
-    listenForNotifications(userId, setNotification);
-  }, []);
+  // const [notification, setNotification] = useState('');
+  // useEffect(() => {
+  //   const userId = 'Status'; // ID của người dùng mà bạn muốn theo dõi thông báo
+  //   listenForNotifications(userId, setNotification);
+  // }, []);
 
-  useEffect(() => {
-    updateStatus()
-  }, [notification]);
+  // useEffect(() => {
+  //   updateStatus()
+  // }, [notification]);
 
 
-  const updateStatus = useCallback(async () => {
-    try {
-      if (cookie.token_hospital) {
-        var tokenjwt = jwtDecode(cookie.token_hospital)
-        var rs = await apiRequest("GET", `stompclient/changeStatus/${tokenjwt.sub}`)
-        console.log(rs);
-      }
-    } catch (error) {
+  // const updateStatus = useCallback(async () => {
+  //   try {
+  //     if (cookie.token_hospital) {
+  //       var tokenjwt = jwtDecode(cookie.token_hospital)
+  //       var rs = await apiRequest("GET", `stompclient/changeStatus/${tokenjwt.sub}`)
 
-    }
-  }, [cookie])
+  //       console.log(rs);
+  //     }
+  //   } catch (error) {
+
+  //   }
+  // }, [cookie])
 
 
   useEffect(() => {

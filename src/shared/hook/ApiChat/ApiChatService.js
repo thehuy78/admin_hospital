@@ -3,7 +3,7 @@ import { withCookies } from 'react-cookie';
 
 
 const urlApi = "http://103.12.77.74:8080/chatservice/";
-
+// const urlApi = "http://localhost:8080/chatservice/";
 export const apiRequestForm = async (method, uri, data = null) => {
     try {
         const config = {
@@ -19,7 +19,7 @@ export const apiRequestForm = async (method, uri, data = null) => {
         return response;
     } catch (error) {
         console.error("API request error:", error);
-        throw error;
+        // throw error;
     }
 };
 
@@ -39,7 +39,7 @@ export const apiRequest = async (method, uri, data = null) => {
         return response;
     } catch (error) {
         console.error("API request error:", error);
-        throw error;
+        // throw error;
     }
 };
 

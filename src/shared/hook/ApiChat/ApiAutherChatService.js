@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const urlApi = "http://103.12.77.74:8080/chatservice/";
-
+// const urlApi = "http://localhost:8080/chatservice/";
 export const apiRequestAutherize = async (method, uri, cookies, data = null) => {
     try {
         const config = {
@@ -21,7 +21,7 @@ export const apiRequestAutherize = async (method, uri, cookies, data = null) => 
         return response;
     } catch (error) {
         console.error("API request error:", error);
-        throw error;
+        // throw error;
     }
 };
 
@@ -45,7 +45,7 @@ export const apiRequestAutherizeForm = async (method, uri, cookies, data = null)
         return response;
     } catch (error) {
         console.error("API request error:", error);
-        throw error;
+        // throw error;
     }
 };
 
